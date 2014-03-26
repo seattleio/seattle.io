@@ -9,6 +9,8 @@ Bundler.require(*Rails.groups)
 module SeattleIo
   class Application < Rails::Application
 
+    config.serve_static_assets = true
+
     # add bower components to assets path
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
 
