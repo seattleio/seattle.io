@@ -1,0 +1,4 @@
+S3_BUCKET_NAME=name-of-s3-bucket
+AWS_ACCESS_KEY_ID=your-aws-access-id
+AWS_SECRET_ACCESS_KEY=your-aws-secret key
+MAILCHIMP_API_KEY=your-mailchimp-key

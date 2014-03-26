@@ -1,0 +1,20 @@
+<div class="topic-header row">
+  <h1 class="topic-title">Neighborhoods</h1>
+
+  <ul class="topic-toolbar">
+    <li class="active"><a href="#">List</a></li>
+    <!--<li><a href="#">Map</a></li>-->
+    <li><a href="#">Discuss</a></li>
+  </ul>
+</div>
+
+<div class="group">
+  <% @neighborhoods.each do |neighborhood| %>
+    <div class="group-item">
+      <h2><%= link_to neighborhood.name, neighborhood %></h2>
+      <div><p><%= neighborhood.description %></p></div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'New Neighborhood', new_neighborhood_path %>

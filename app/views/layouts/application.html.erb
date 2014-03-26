@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>seattle.io</title>
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,400italic|Open+Sans:400,300,800' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav id="header-nav">
+      <h1 class="site-title">
+        <%= link_to 'seattle.io', root_path %>
+      </h1>
+
+      <ul class="nav">
+        <li><%= link_to 'neighborhoods', neighborhoods_path %></li>
+        <li><%= link_to 'topics', topics_path %></li>
+        <li><a href="#">store</a></li>
+        <li><a href="#">subscribe</a></li>
+        <li><%= link_to 'about', page_path('about') %></li>
+        <% if user_signed_in? %>
+        <li><a href="#">account</a></li>
+        <li><%= link_to('log out', destroy_user_session_path, :method => :delete) %></li>
+        <% else %>
+        <li><%= link_to "sign in", new_user_session_path %></li>
+        <li><%= link_to "create account", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main role="main">
+  <div class="container">
+    <div id="flash_messages">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, :class => "flash #{key}") %>
+      <% end %>
+    </div>
+
+    <%= yield %>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    
+  </div>
+</footer>
+
+</body>
+</html>

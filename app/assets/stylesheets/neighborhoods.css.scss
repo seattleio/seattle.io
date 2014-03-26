@@ -1,0 +1,44 @@
+#topic-description {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#map-display {
+  display: none;
+  width: 300px;
+  height: 300px;
+  float: right;
+  margin-left: 30px;
+}
+
+main section {
+  margin-top: 80px;
+}
+
+section .title {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#external-resources {
+  ul {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+
+  li {
+    padding: 20px;
+    width: 30%;
+    margin: 0px 5px;
+    display: inline-block;
+    background-color: #efefef;
+  }
+}
+
+@media (min-width:960px){
+  #topic-description {
+    height: 300px;
+  }  
+}

@@ -1,0 +1,65 @@
+#post {
+  padding-top: 30px;
+}
+
+#post h2 {
+  font-weight: 300;
+}
+
+#post .post-content p {
+  margin-bottom: 20px;
+}
+
+.posts {
+  margin-bottom: 30px;
+}
+
+.posts a {
+  color: #1E4147;
+  text-decoration: none;
+}
+
+.posts a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.posts h3.post-title {
+  margin-top: 5px;
+}
+
+.posts .post-content p {
+  margin-top: 10px;
+}
+
+.post {
+  padding-bottom: 0px;
+  border-bottom: 1px solid #efefe2;
+  margin-bottom: 30px;
+}
+
+.post-date {
+  margin-bottom: 5px;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  text-align: left;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  clear: both;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-image {
+  margin-bottom: 30px;
+}
+
+.map-field {
+  margin-bottom: 30px;
+}
+
+#neighborhood_geometry {
+  display: none;
+}

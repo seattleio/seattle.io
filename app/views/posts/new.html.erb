@@ -1,0 +1,29 @@
+<%= form_for(@post) do |f| %>
+  <div class="admin-toolbar">
+    <h1 class="admin-title">New post</h1>
+
+    <ul class="admin-toolbar-buttons">
+      <li class="save"><%= f.submit :class => 'button' %></li>
+    </ul>
+  </div>
+
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :title, class: 'title-input', placeholder: 'Post title', autofocus: 'true' %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :content, class: "content-input", placeholder: 'Write your post using markdown' %>
+  </div>
+<% end %>

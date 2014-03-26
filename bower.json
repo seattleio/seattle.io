@@ -1,0 +1,22 @@
+{
+  "name": "seattle.io",
+  "version": "0.0.0",
+  "authors": [
+    "sethvincent <sethvincent@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "leaflet": "~0.7.2",
+    "leaflet-providers": "~1.0.1",
+    "leaflet.draw": "~0.2.3"
+  }
+}

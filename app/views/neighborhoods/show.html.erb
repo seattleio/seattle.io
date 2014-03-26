@@ -1,0 +1,53 @@
+<div class="topic-header row">
+  <h1 class="topic-title"><%= @neighborhood.name %></h1>
+
+  <ul class="topic-toolbar">
+    <li class="active"><a href="#info">Info</a></li>
+    <li><a href="#recent-posts">Posts</a></li>
+    <li><a href="#">Discuss</a></li>
+    <% if can? :manage, @neighborhood %>
+    <li><%= link_to 'Settings', edit_neighborhood_path(@neighborhood) %></li>
+    <% end %>
+  </ul>
+  <%= link_to 'Neighborhoods', neighborhoods_path, class: 'parent-page' %>
+</div>
+
+<section id="topic-description">
+  <div id="map-display">
+    <%= @neighborhood.geometry %>
+  </div>
+
+  <p><%= @neighborhood.description %></p>
+</section>
+<hr>
+
+<section id="info">
+  <h1>Info about <%= @neighborhood.name %>:</h1>
+  <ul>
+    <li>SeattleWiki & Wikipedia</li>
+    <li>Yelp & UrbanSpoon</li>
+    <li>Local blogs</li>
+  </ul>
+</section>
+
+<section id="external-resources">
+  <h1>Explore <%= @neighborhood.name %> on other resources:</h1>
+  <ul>
+    <li>SeattleWiki & Wikipedia</li>
+    <li>Yelp & UrbanSpoon</li>
+    <li>Local blogs</li>
+  </ul>
+</section>
+
+<% if @neighborhood.posts.size > 0 %>
+<section id="recent-posts" class="group">
+  <h1>Recent posts about <%= @neighborhood.name %>:</h1>
+  <% @neighborhood.posts.each do |post| %>
+    <div class="post group-item">
+      <h2><%= link_to post.title, post %></h2>
+      <div><%= teaser(post.content) %></div>
+    </div>
+  <% end %>
+  </div>
+</section>
+<% end %>
