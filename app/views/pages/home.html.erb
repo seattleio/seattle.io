@@ -1,0 +1,35 @@
+<% if @posts.size > 0 %>
+<section id="posts" class="group">
+  <h1>Recent posts:</h1>
+  <% @posts.each do |post| %>
+    <div class="post group-item">
+      <h2><%= link_to post.title, post %></h2>
+      <div><%= teaser(post.content) %></div>
+    </div>
+  <% end %>
+</section>
+<% end %>
+
+<% if @neighborhoods.size > 0 %>
+<section id="neighborhoods" class="group">
+  <h1>Seattle neighborhoods:</h1>
+  <% @neighborhoods.each do |n| %>
+    <div class="neighborhood group-item">
+      <h2><%= link_to n.name, n %></h2>
+      <div><%= teaser(n.description) %></div>
+    </div>
+  <% end %>
+</section>
+<% end %>
+
+<% if @topics.size > 0 %>
+<section id="topics" class="group">
+  <h1>Seattle topics:</h1>
+  <% @topics.each do |t| %>
+    <div class="topic group-item">
+      <h2><%= link_to t.name, t %></h2>
+      <div><%= teaser(t.description) %></div>
+    </div>
+  <% end %>
+</section>
+<% end %>

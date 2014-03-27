@@ -2,7 +2,7 @@ SeattleIo::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users
 
-  root 'posts#index'
+  root 'pages#home'
 
   resources :topics
   resources :posts
