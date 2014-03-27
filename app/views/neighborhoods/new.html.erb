@@ -3,14 +3,8 @@
     <h1 class="admin-title">Create new Neighborhood</h1>
 
     <ul class="admin-toolbar-buttons">
-      <li class="edit-map-button"><a href="#">Hide map</a></li>
       <li><%= f.submit :class => 'button' %></li>
     </ul>
-  </div>
-
-  <div class="map-field">
-    <%= f.text_area :geometry %>
-    <div id="map" style="width:100%; height:300px;"></div>
   </div>
 
   <% if @neighborhood.errors.any? %>
