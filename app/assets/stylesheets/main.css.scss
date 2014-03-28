@@ -155,6 +155,10 @@ header ul.nav a:focus {
   color: #000;
 }
 
+label {
+  margin-bottom: 5px;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -163,13 +167,18 @@ textarea {
   border-radius: 2px;
   display: inline-block;
   outline: none;
-  width: 150px;
-  padding: 8px 10px 6px;
+  width: 100%;
+  padding: 0px 10px;
   vertical-align: top;
   margin-bottom: 15px;
   margin-right: 5px;
   font-weight: 300;
-  height: 45px;
+  height: 55px;
+}
+
+textarea {
+  padding: 10px 0px 0px 10px;
+  height: 250px;
 }
 
 @media only screen and (min-width: 510px){
@@ -177,7 +186,7 @@ textarea {
   input[type="email"],
   input[type="password"],
   textarea {
-    width: 250px;
+    width: 400px;
   }
 }
 

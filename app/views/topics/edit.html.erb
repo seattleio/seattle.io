@@ -1,6 +1,35 @@
-<h1>Editing topic</h1>
+<%= form_for(@topic) do |f| %>
+  <div class="admin-toolbar">
+    <h1 class="admin-title">Editing topic</h1>
 
-<%= render 'form' %>
+    <ul class="admin-toolbar-buttons">
+      <li class="edit-button map"><a href="#">Hide map</a></li>
+      <li class="edit-button settings"><a href="#">Settings</a></li>
+      <li><%= f.submit :class => 'button' %></li>
+    </ul>
+  </div>
 
-<%= link_to 'Show', @topic %> |
-<%= link_to 'Back', topics_path %>
+  <div class="map-field">
+    <div id="map" style="width:100%; height:300px;"></div>
+  </div>
+
+  <% if @topic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+
+      <ul>
+      <% @topic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, class: 'title-input', placeholder: 'Topic name' %>
+  </div>
+  
+  <div class="field">
+    <%= f.text_area :description, class: "content-input", placeholder: 'Describe the topic (using markdown)' %>
+  </div>
+<% end %>

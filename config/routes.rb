@@ -1,6 +1,12 @@
 SeattleIo::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-  devise_for :users
+  
+  devise_for :users, :path => '', :path_names => { 
+    :sign_up => 'create-account',
+    :sign_in => 'sign-in', 
+    :sign_out => 'sign-out'
+  }
+
 
   root 'pages#home'
 

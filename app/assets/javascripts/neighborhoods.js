@@ -1,21 +1,15 @@
 $(document).ready(function(){
 
-  if ($('#map-display').length > 0){
-    var $mapDisplay = $('#map-display');
-    var geomDisplay = $mapDisplay.text();
-    $mapDisplay.text('').show();
-
-    var map = L.map('map-display', { scrollWheelZoom: false });
-    map.setView([47.63, -122.32], 11);
-    var layer = L.tileLayer.provider('Stamen.Watercolor');
-    layer.addTo(map);
-    var geomDisplayLayer = L.geoJson(JSON.parse(geomDisplay))
-    map.addLayer(geomDisplayLayer);    
-  }
+  var map = L.map('map-display', { scrollWheelZoom: false });
+  map.setView([47.63, -122.32], 11);
+  var layer = L.tileLayer.provider('Stamen.Watercolor');
+  layer.addTo(map);
+  var geomDisplayLayer = L.geoJson(JSON.parse(neighborhoodGeom));
+  map.addLayer(geomDisplayLayer);
 
   if ($('.map-field').length > 0){
     var $map = $('.map-field');
-    var $mapButton = $('.admin-toolbar-buttons .edit-map-button');
+    var $mapButton = $('.admin-toolbar-buttons .edit-button.map');
 
     var mapVisible = true;
     $mapButton.on('click', 'a', function(e){
@@ -42,12 +36,7 @@ $(document).ready(function(){
     map.addLayer(drawnItems);
 
     var drawControl = new L.Control.Draw({
-      draw: {
-          polyline: false,
-          marker: false,
-          circle: false,
-          rectangle: false
-      },
+      draw: { polyline: false, marker: false, circle: false, rectangle: false },
       edit: { featureGroup: drawnItems }
     });
 

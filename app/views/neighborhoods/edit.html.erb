@@ -3,13 +3,13 @@
     <h1 class="admin-title">Editing Neighborhood</h1>
 
     <ul class="admin-toolbar-buttons">
-      <li class="edit-map-button"><a href="#">Hide map</a></li>
+      <li class="edit-button map"><a href="#">Hide map</a></li>
+      <li class="edit-button settings"><a href="#">Settings</a></li>
       <li><%= f.submit :class => 'button' %></li>
     </ul>
   </div>
 
   <div class="map-field">
-    <%= f.text_area :geometry %>
     <div id="map" style="width:100%; height:300px;"></div>
   </div>
 
@@ -32,4 +32,11 @@
   <div class="field">
     <%= f.text_area :description, class: "content-input", placeholder: 'Describe the neighborhood (using markdown)' %>
   </div>
+<% end %>
+
+
+<!-- pass neighborhood geometry to javascript -->
+
+<%= javascript_tag do %>
+  window.neighborhoodGeom = <%= raw @neighborhood.geometry.to_json %>
 <% end %>

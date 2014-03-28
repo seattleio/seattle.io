@@ -1,31 +1,20 @@
-<h1 class="post-title">Topics</h1>
+<div class="topic-header row">
+  <h1 class="topic-title">Topics</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Geometry</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <ul class="topic-toolbar">
+    <li class="active"><a href="#">List</a></li>
+    <!--<li><a href="#">Map</a></li>-->
+    <li><a href="#">Discuss</a></li>
+  </ul>
+</div>
 
-  <tbody>
-    <% @topics.each do |topic| %>
-      <tr>
-        <td><%= topic.name %></td>
-        <td><%= topic.description %></td>
-        <td><%= topic.geometry %></td>
-        <td><%= link_to 'Show', topic %></td>
-        <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-        <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="group">
+  <% @topics.each do |topic| %>
+    <div class="group-item">
+      <h2><%= link_to topic.name, topic %></h2>
+      <div><p><%= topic.description %></p></div>
+    </div>
+  <% end %>
+</div>
 
 <%= link_to 'New Topic', new_topic_path %>

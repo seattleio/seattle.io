@@ -13,9 +13,7 @@
 </div>
 
 <section id="topic-description">
-  <div id="map-display">
-    <%= @neighborhood.geometry %>
-  </div>
+  <div id="map-display"></div>
 
   <p><%= @neighborhood.description %></p>
 </section>
@@ -50,4 +48,10 @@
   <% end %>
   </div>
 </section>
+<% end %>
+
+<!-- pass neighborhood geometry to javascript -->
+
+<%= javascript_tag do %>
+  window.neighborhoodGeom = <%= raw @neighborhood.geometry.to_json %>
 <% end %>
