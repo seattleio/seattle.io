@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :redirect_https
+  #before_filter :redirect_https
   after_filter :store_location
 
   def redirect_https
