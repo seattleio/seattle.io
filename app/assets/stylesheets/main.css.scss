@@ -73,11 +73,6 @@ hr {
   margin: 10px 0 30px 0;
 }
 
-.sidebar {
-  margin-top: 30px;
-  padding: 5px 20px;
-  background-color: #efefec;
-}
 
 main p,
 .post-content,
@@ -264,7 +259,7 @@ a.read-more:hover {
 }
 
 .group-title {
-  color: #858583;
+  color: #656563;
   font-weight: 300;
 }
 
@@ -278,6 +273,47 @@ a.read-more:hover {
   margin-bottom: 40px;
 }
 
+.home {
+  #posts { margin-top: 0px; }
+  .group { margin-top: 15px; }
+  .group-title { margin-top: 0px; }
+}
+
+.sidebar {
+  .group {
+    margin-bottom: 50px;
+  }
+
+  .group-title {
+    font-size: 20px;
+  }
+
+  .group-item {
+    font-size: 10px;
+    border-bottom: 0px;
+    margin-bottom: 10px;
+  }
+
+  .group-item a {
+    font-size: 15px;
+    padding: 4px 10px;
+    border-left: 5px solid #f2f2f0;
+    border-bottom: 0px;
+    display: block;
+  }
+
+  .group-item a:hover {
+    font-size: 15px;
+    padding: 4px 10px;
+    border-left: 5px solid #e2e2e0;
+    border-bottom: 0px;
+    background-color: #fafafa;
+  }
+
+  .group-item-title {
+    margin-bottom: 40px;
+  }
+}
 
 
 footer {
@@ -381,17 +417,6 @@ textarea.content-input {
 }
 
 
-
-
-
-
-@media only screen and (min-width: 500px) {
-  #interwebs #find li {
-    width: auto;
-    display: inline-block;
-  }
-}
-
 /* mobile size */
 .container {
   width: 100%;
@@ -399,11 +424,30 @@ textarea.content-input {
   margin: 0px auto;
 }
 
+.main-content {
+  width: 100%;
+}
+
+.sidebar {
+  width: 100%;
+}
+
 /* tablet size */
 @media only screen and (min-width: 620px) {
   .container {
     width: 580px;
     padding: 0px 20px;
+  }
+
+  .main-content {
+    width: 65%;
+    float: left
+  }
+
+  .sidebar {
+    width: 100%;
+    width: 30%;
+    float: right;
   }
 }
 

@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
   def home
+    @body_class = 'home'
     @pages = Page.all
     @posts = Post.all
     @neighborhoods = Neighborhood.all
