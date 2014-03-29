@@ -1,19 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="topic-header row">
+  <h1 class="topic-title"><%= @topic.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @topic.name %>
-</p>
+  <ul class="topic-toolbar">
+    <li class="active"><a href="#info">Info</a></li>
+    <li><a href="#recent-posts">Posts</a></li>
+    <li><a href="#">Discuss</a></li>
+    <% if can? :manage, @topic %>
+    <li><%= link_to 'Settings', edit_topic_path(@topic) %></li>
+    <% end %>
+  </ul>
+  <%= link_to 'topics', topics_path, class: 'parent-page' %>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @topic.description %>
-</p>
+<section id="topic-description">
+  <p><%= @topic.description %></p>
+</section>
+<hr>
 
-<p>
-  <strong>Geometry:</strong>
-  <%= @topic.geometry %>
-</p>
-
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<% if @topic.posts.size > 0 %>
+<section id="recent-posts" class="group">
+  <h1>Recent posts about <%= @topic.name %>:</h1>
+  <% @topic.posts.each do |post| %>
+    <div class="post group-item">
+      <h2><%= link_to post.title, post %></h2>
+      <div><%= teaser(post.content) %></div>
+    </div>
+  <% end %>
+  </div>
+</section>
+<% end %>
