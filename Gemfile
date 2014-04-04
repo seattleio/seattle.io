@@ -33,4 +33,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'friendly_id', github: 'norman/friendly_id'
-gem 'localwiki_client', github: 'sethvincent/localwiki_client', branch: 'hub-api'
+#gem 'localwiki_client', github: 'sethvincent/localwiki_client', branch: 'hub-api'
+
+gem 'localwiki_client', :path => 'vendor/gems/localwiki_client'

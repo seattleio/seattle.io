@@ -10,6 +10,19 @@ class NeighborhoodsController < ApplicationController
   # GET /neighborhoods/1
   # GET /neighborhoods/1.json
   def show
+    wiki = LocalwikiClient.new
+
+
+    puts "\n\n\n\n\n\n\n\n\n"
+    puts @neighborhood.name.downcase.gsub(/\s+/, '') 
+    puts "\n\n\n\n\n\n\n\n\n"
+
+    @localwiki_pages = wiki.list :pages, {
+      region__slug: 'seattle',
+      tags: @neighborhood.name.downcase.gsub(/\s+/, '') 
+    }
+
+    puts @localwiki_pages.inspect
   end
 
   # GET /neighborhoods/new
@@ -27,13 +40,8 @@ class NeighborhoodsController < ApplicationController
     @neighborhood = Neighborhood.new(neighborhood_params)
     wiki = LocalwikiClient.new
 
-    puts "\n\n\n\n\n\n\n\n"
-    puts @neighborhood.name.downcase
     res = wiki.fetch_map @neighborhood.name.downcase
     geom = res['results'][0]['geom']
-    puts "\n\n\n\n\n\n\n\n"
-    puts geom
-    puts "\n\n\n\n\n\n\n\n"
     @neighborhood.geometry = geom.to_json
 
     respond_to do |format|

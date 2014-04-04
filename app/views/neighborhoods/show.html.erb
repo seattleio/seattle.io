@@ -19,6 +19,7 @@
 </section>
 <hr>
 
+<!--
 <section id="info">
   <h1>Info about <%= @neighborhood.name %>:</h1>
   <ul>
@@ -27,14 +28,29 @@
     <li>Local blogs</li>
   </ul>
 </section>
+-->
 
 <section id="external-resources">
+  <!--
   <h1>Explore <%= @neighborhood.name %> on other resources:</h1>
   <ul>
     <li>SeattleWiki & Wikipedia</li>
     <li>Yelp & UrbanSpoon</li>
     <li>Local blogs</li>
   </ul>
+  -->
+  <h1>Explore <%= @neighborhood.name %> pages on the Seattle LocalWiki:</h1>
+  <% if @localwiki_pages.length > 0 %>
+    <div class="group">
+      <% @localwiki_pages.each do |lw| %>
+        <div class="group-item">
+          <h3><a href="http://localwiki.net/seattle/<%= lw.name %>" target="_blank"><%= lw.name %></a></h3>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+      <h2 style="text-align:center;"><a href="http://localwiki.net/seattle/<%= @neighborhood.name %>" target="_blank">Make a page on the Seattle LocalWiki for <%= @neighborhood.name %></a>!</h2>
+  <% end %>
 </section>
 
 <% if @neighborhood.posts.size > 0 %>
