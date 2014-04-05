@@ -11,18 +11,10 @@ class NeighborhoodsController < ApplicationController
   # GET /neighborhoods/1.json
   def show
     wiki = LocalwikiClient.new
-
-
-    puts "\n\n\n\n\n\n\n\n\n"
-    puts @neighborhood.name.downcase.gsub(/\s+/, '') 
-    puts "\n\n\n\n\n\n\n\n\n"
-
     @localwiki_pages = wiki.list :pages, {
       region__slug: 'seattle',
       tags: @neighborhood.name.downcase.gsub(/\s+/, '') 
     }
-
-    puts @localwiki_pages.inspect
   end
 
   # GET /neighborhoods/new
