@@ -258,9 +258,14 @@ a.read-more:hover {
   margin-bottom: 50px;
 }
 
+section.group {
+  margin-top: 0px;
+}
+
 .group-title {
   color: #656563;
   font-weight: 300;
+  margin-top: 0px;
 }
 
 .group-item {
@@ -280,10 +285,12 @@ a.read-more:hover {
 }
 
 .group.small {
+  margin-top: 15px;
   margin-bottom: 50px;
 }
 
 .group.small .group-title {
+  margin-top: 0px;
   font-size: 20px;
 }
 

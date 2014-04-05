@@ -1,11 +1,18 @@
-<% if @post.images.first %>
-  <%= image_tag @post.images.first.file.url(:wide), class: 'post-image' %>
-<% end %>
+<div class="main-content">
+  <% if @post.images.first %>
+    <%= image_tag @post.images.first.file.url(:wide), class: 'post-image' %>
+  <% end %>
 
-<h1 class="post-title">
-  <%= @post.title %>
-</h1>
+  <h1 class="post-title">
+    <%= @post.title %>
+  </h1>
 
-<div class="post-content">
-  <%= markdown(@post.content) %>
+  <div class="post-content">
+    <%= markdown(@post.content) %>
+  </div>
+</div>
+
+<div class="sidebar">
+  <%= render "shared/topics_small_list" %>
+  <%= render "shared/neighborhoods_small_list" %>
 </div>

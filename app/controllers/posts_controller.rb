@@ -5,11 +5,15 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @neighborhoods = Neighborhood.all
+    @topics = Topic.all
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @neighborhoods = Neighborhood.all
+    @topics = Topic.all
   end
 
   # GET /posts/new

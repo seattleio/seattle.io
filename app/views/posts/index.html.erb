@@ -1,13 +1,21 @@
-<div class="posts group">
-<% @posts.each do |post| %>
-  <div class="post group-item">
-    <h2>
-      <%= link_to post.title, post %>
-    </h2>
+<div class="main-content">
+  <section class="posts group">
+  <h1 class="group-title">Recent posts:</h1>
+  <% @posts.each do |post| %>
+    <div class="post group-item">
+      <h2>
+        <%= link_to post.title, post %>
+      </h2>
 
-    <div>
-      <%= teaser(post.content) %>
+      <div>
+        <%= teaser(post.content) %>
+      </div>
     </div>
+  <% end %>
   </div>
-<% end %>
+</section>
+
+<div class="sidebar">
+  <%= render "shared/topics_small_list" %>
+  <%= render "shared/neighborhoods_small_list" %>
 </div>

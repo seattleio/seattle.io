@@ -20,10 +20,10 @@
         <li><%= link_to 'posts', posts_path %></li>
         <li><%= link_to 'neighborhoods', neighborhoods_path %></li>
         <li><%= link_to 'topics', topics_path %></li>
-        <li><a href="#">store</a></li>
+        <!--<li><a href="#">store</a></li>-->
         <li><%= link_to 'about', page_path('about') %></li>
         <% if user_signed_in? %>
-        <li><a href="#">account</a></li>
+        <!--<li><a href="#">account</a></li>-->
         <% if current_user && current_user.admin? %>
         <li><%= link_to 'admin', rails_admin_path %></li>
         <li><%= link_to('log out', destroy_user_session_path, :method => :delete) %></li>
