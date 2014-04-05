@@ -5,8 +5,10 @@ GIT
     friendly_id (5.0.3)
       activerecord (>= 4.0.0)
 
-PATH
-  remote: vendor/gems/localwiki_client
+GIT
+  remote: git://github.com/sethvincent/localwiki_client.git
+  revision: f2f7f3c754ec07eeb7de67bb0b5c80ea98ce5689
+  branch: hub-api
   specs:
     localwiki_client (0.3.1)
       faraday
