@@ -30,4 +30,14 @@ RailsAdmin.config do |config|
     history_index
     history_show
   end
+
+  config.model 'Post' do
+    configure :created_at do
+      show
+    end
+    
+    list do
+      
+    end
+  end
 end
