@@ -2,9 +2,9 @@
   <h1 class="topic-title"><%= @topic.name %></h1>
 
   <ul class="topic-toolbar">
-    <li class="active"><a href="#info">Info</a></li>
+    <!--<li class="active"><a href="#info">Info</a></li>-->
     <li><a href="#recent-posts">Posts</a></li>
-    <li><a href="#">Discuss</a></li>
+    <!--<li><a href="#">Discuss</a></li>-->
     <% if can? :manage, @topic %>
     <li><%= link_to 'Settings', edit_topic_path(@topic) %></li>
     <% end %>
