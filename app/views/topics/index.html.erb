@@ -17,4 +17,6 @@
   <% end %>
 </div>
 
-<%= link_to 'New Topic', new_topic_path %>
+<% if can? :manage, @topics %>
+  <%= link_to 'New Topic', new_topic_path %>
+<% end %>

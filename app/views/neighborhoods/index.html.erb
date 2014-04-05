@@ -17,4 +17,6 @@
   <% end %>
 </div>
 
-<%= link_to 'New Neighborhood', new_neighborhood_path %>
+<% if can? :manage, @neighborhoods %>
+  <%= link_to 'New Neighborhood', new_neighborhood_path %>
+<% end %>

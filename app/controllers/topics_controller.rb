@@ -14,16 +14,19 @@ class TopicsController < ApplicationController
 
   # GET /topics/new
   def new
+    authorize! :manage, @topic
     @topic = Topic.new
   end
 
   # GET /topics/1/edit
   def edit
+    authorize! :manage, @topic
   end
 
   # POST /topics
   # POST /topics.json
   def create
+    authorize! :manage, @topic
     @topic = Topic.new(topic_params)
 
     respond_to do |format|
@@ -40,6 +43,7 @@ class TopicsController < ApplicationController
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
   def update
+    authorize! :manage, @topic
     respond_to do |format|
       if @topic.update(topic_params)
         format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
@@ -54,6 +58,7 @@ class TopicsController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.json
   def destroy
+    authorize! :manage, @topic
     @topic.destroy
     respond_to do |format|
       format.html { redirect_to topics_url }

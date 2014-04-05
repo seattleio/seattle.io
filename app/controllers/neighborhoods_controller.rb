@@ -19,16 +19,19 @@ class NeighborhoodsController < ApplicationController
 
   # GET /neighborhoods/new
   def new
+    authorize! :manage, @neighborhood
     @neighborhood = Neighborhood.new
   end
 
   # GET /neighborhoods/1/edit
   def edit
+    authorize! :manage, @neighborhood
   end
 
   # POST /neighborhoods
   # POST /neighborhoods.json
   def create
+    authorize! :manage, @neighborhood
     @neighborhood = Neighborhood.new(neighborhood_params)
     wiki = LocalwikiClient.new
 
@@ -50,6 +53,7 @@ class NeighborhoodsController < ApplicationController
   # PATCH/PUT /neighborhoods/1
   # PATCH/PUT /neighborhoods/1.json
   def update
+    authorize! :manage, @neighborhood
     respond_to do |format|
       if @neighborhood.update(neighborhood_params)
         format.html { redirect_to @neighborhood, notice: 'Neighborhood was successfully updated.' }
@@ -64,6 +68,7 @@ class NeighborhoodsController < ApplicationController
   # DELETE /neighborhoods/1
   # DELETE /neighborhoods/1.json
   def destroy
+    authorize! :manage, @neighborhood
     @neighborhood.destroy
     respond_to do |format|
       format.html { redirect_to neighborhoods_url }
