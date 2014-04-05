@@ -5,4 +5,10 @@ class Post < ActiveRecord::Base
   belongs_to :neighborhood
   belongs_to :topic
   has_many :images
+
+  def slug=(value)
+    if value.present?
+      write_attribute(:slug, value)
+    end
+  end
 end
