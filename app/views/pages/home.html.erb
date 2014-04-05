@@ -27,7 +27,7 @@
     <% @posts.each do |post| %>
       <div class="post group-item">
         <h2><%= link_to post.title, post %></h2>
-        <div><%= teaser(post.content) %></div>
+        <p><%= teaser(post.content) %></p>
       </div>
     <% end %>
   </section>
