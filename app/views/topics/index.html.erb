@@ -12,7 +12,7 @@
   <% @topics.each do |topic| %>
     <div class="group-item">
       <h2><%= link_to topic.name, topic %></h2>
-      <div><p><%= topic.description %></p></div>
+      <div><p><%= teaser(topic.description) %></p></div>
     </div>
   <% end %>
 </div>

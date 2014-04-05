@@ -12,7 +12,7 @@
   <% @neighborhoods.each do |neighborhood| %>
     <div class="group-item">
       <h2><%= link_to neighborhood.name, neighborhood %></h2>
-      <div><p><%= neighborhood.description %></p></div>
+      <div><p><%= teaser(neighborhood.description) %></p></div>
     </div>
   <% end %>
 </div>
