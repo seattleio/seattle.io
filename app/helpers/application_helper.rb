@@ -11,6 +11,6 @@ module ApplicationHelper
 
   def teaser(text)
     t = markdown(text)
-    truncate(t, length: 300, escape: false)
+    sanitize(truncate(t, length: 300, escape: false), :tags=>[])
   end
 end
