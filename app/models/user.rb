@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
     [first_name, last_name].join(' ')
   end
 
+  def admin?
+    self.admin
+  end
+
 end
