@@ -12,7 +12,11 @@
   <%= link_to 'topics', topics_path, class: 'parent-page' %>
 </div>
 
-<section id="topic-description">
+<section id="topic-description">  
+  <% if @topic.images.first %>
+    <%= image_tag @topic.images.first.file.url(:medium_topic), class: 'topic-image' %>
+  <% end %>
+
   <p><%= markdown(@topic.description) %></p>
 </section>
 <hr>

@@ -2,7 +2,8 @@ class Image < ActiveRecord::Base
   has_attached_file(
     :file, 
     :styles => {
-      :wide => "1200x600#", 
+      :wide => "1200x600#",
+      :medium_topic => "600x600>",
       :medium => "600x400#", 
       :thumb => "100x100#"
     }, 

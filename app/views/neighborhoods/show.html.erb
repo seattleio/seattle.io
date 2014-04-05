@@ -13,10 +13,6 @@
 </div>
 
 <section id="topic-description">
-  <% if @topic.images.first %>
-    <%= image_tag @topic.images.first.file.url(:medium), class: 'topic-image' %>
-  <% end %>
-
   <p><%= markdown(@neighborhood.description) %></p>
 </section>
 <hr>

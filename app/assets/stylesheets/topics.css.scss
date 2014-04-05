@@ -35,6 +35,24 @@ ul.topic-toolbar {
   }
 }
 
+#topic-description {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.topic-image {
+  width: 100px;
+  height: auto;
+  float: right;
+  margin-left: 50px;
+}
+
+@media (min-width:960px){
+  .topic-image {
+    width: 250px;
+  }
+}
+
 .parent-page {
   float: right;
   display: block;
