@@ -4,7 +4,6 @@ class Image < ActiveRecord::Base
     :styles => {
       :wide => "1200x600#", 
       :medium => "600x400#", 
-      :medium => "300x300#", 
       :thumb => "100x100#"
     }, 
     :default_url => "/images/:style/missing.png"

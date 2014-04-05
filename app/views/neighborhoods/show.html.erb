@@ -13,7 +13,9 @@
 </div>
 
 <section id="topic-description">
-  <div id="map-display"></div>
+  <% if @topic.images.first %>
+    <%= image_tag @topic.images.first.file.url(:medium), class: 'topic-image' %>
+  <% end %>
 
   <p><%= markdown(@neighborhood.description) %></p>
 </section>
