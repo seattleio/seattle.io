@@ -6,6 +6,9 @@ class Post < ActiveRecord::Base
   belongs_to :topic
   has_many :images
 
+  scope :published, -> { where(published: true) }
+  scope :recent, -> { order(created_at: :desc) }
+
   def slug=(value)
     if value.present?
       write_attribute(:slug, value)

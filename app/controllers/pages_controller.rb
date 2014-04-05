@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     @body_class = 'home'
     @pages = Page.all
-    @posts = Post.all
+    @posts = Post.recent.published.limit(5)
     @neighborhoods = Neighborhood.all
     @topics = Topic.all
   end
