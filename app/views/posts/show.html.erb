@@ -3,6 +3,16 @@
     <%= image_tag @post.images.first.file.url(:wide), class: 'post-image' %>
   <% end %>
 
+  <ul id="categories">
+    <% if @post.neighborhood %>
+      <li><%= link_to @post.neighborhood['name'], @post.neighborhood %></li>
+    <% end %>
+
+    <% if @post.topic %>
+      <li><%= link_to @post.topic['name'], @post.topic %></li>
+    <% end %>
+  </ul>
+
   <h1 class="post-title">
     <%= @post.title %>
   </h1>

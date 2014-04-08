@@ -22,6 +22,21 @@
   margin-top: 10px;
 }
 
+#categories {
+  margin: 0px;
+  padding: 0px;
+}
+
+#categories li {
+  display: inline-block;
+  font-size: 12px;
+}
+
+#categories li a {
+  background-color: #fafafa; 
+  padding: 3px 5px;
+}
+
 .post {
   padding-bottom: 0px;
   border-bottom: 1px solid #efefe2;
