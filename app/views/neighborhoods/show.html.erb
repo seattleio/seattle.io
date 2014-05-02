@@ -38,15 +38,16 @@
     <li>Local blogs</li>
   </ul>
   -->
-  <h1>Explore <%= @neighborhood.name %> pages on the Seattle LocalWiki:</h1>
+
+  <h1>Explore <%= @neighborhood.name %> on the Seattle LocalWiki:</h1>
   <% if @localwiki_pages.length > 0 %>
-    <div class="group">
+    <ul class="group localwiki-pages">
       <% @localwiki_pages.each do |lw| %>
-        <div class="group-item">
+        <li class="group-item page">
           <h3><a href="http://localwiki.net/seattle/<%= lw.name %>" target="_blank"><%= lw.name %></a></h3>
-        </div>
+        </li>
       <% end %>
-    </div>
+    </ul>
   <% else %>
       <h2 style="text-align:center;"><a href="http://localwiki.net/seattle/<%= @neighborhood.name %>" target="_blank">Make a page on the Seattle LocalWiki for <%= @neighborhood.name %></a>!</h2>
   <% end %>

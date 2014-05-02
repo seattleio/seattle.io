@@ -60,3 +60,26 @@ ul.topic-toolbar {
   height: 50px;
   line-height: 50px;
 }
+
+.localwiki-pages {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+
+  .page {
+    width: 250px;
+    text-align: left;
+    display: inline-block;
+    border: 0px;
+    vertical-align: top;
+    background-color: #f9f9f7;
+    margin: 0px 0px 5px 0px;
+    padding: 5px 10px;
+
+    h3 {
+      font-size: 0.8em;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+}
