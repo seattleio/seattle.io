@@ -1,6 +1,9 @@
 <div class="main-content">
   <% if @post.images.first %>
-    <%= image_tag @post.images.first.file.url(:medium), class: 'post-image' %>
+    <div class="post-main-image">
+      <%= image_tag @post.images.first.file.url(:medium) %>
+      <div class="credits"><%= markdown(@post.images.first.credits) %></div>
+    </div>
   <% end %>
 
   <ul id="categories">

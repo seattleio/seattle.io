@@ -1,0 +1,16 @@
+{
+  "name": "seattle.io",
+  "description": "",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/seattle-io/seattle.io.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "assets": "RAILS_ENV=production bundle exec rake assets:precompile",
+    "migrate": "bundle exec rake db:migrate",
+    "start": "rails s"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

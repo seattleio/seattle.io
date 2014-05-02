@@ -57,8 +57,17 @@
   height: auto;
 }
 
-.post-image {
+.post-main-image {
   margin-bottom: 30px;
+}
+
+.credits {
+
+  p {
+    font-size: 0.5em;
+    margin: 0px;
+    font-style: italic;
+  }
 }
 
 .map-field {
