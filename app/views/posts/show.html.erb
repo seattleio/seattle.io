@@ -1,6 +1,6 @@
 <div class="main-content">
   <% if @post.images.first %>
-    <%= image_tag @post.images.first.file.url(:wide), class: 'post-image' %>
+    <%= image_tag @post.images.first.file.url(:medium), class: 'post-image' %>
   <% end %>
 
   <ul id="categories">
