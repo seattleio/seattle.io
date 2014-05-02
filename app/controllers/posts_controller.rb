@@ -6,14 +6,14 @@ class PostsController < ApplicationController
   def index
     @posts = Post.recent
     @neighborhoods = Neighborhood.all
-    @topics = Topic.all
+    @communities = Topic.all
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
     @neighborhoods = Neighborhood.all
-    @topics = Topic.all
+    @communities = Topic.all
   end
 
   # GET /posts/new
