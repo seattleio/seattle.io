@@ -26,6 +26,8 @@ gem 'gibbon'
 gem 'paper_trail', '~> 3.0.1'
 gem 'paperclip', '~> 4.1.0'
 gem 'aws-sdk'
+gem 'geocoder'
+#gem 'wikipeda-client'
 
 gem 'liquid'
 gem 'redcarpet'

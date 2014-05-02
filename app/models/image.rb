@@ -15,6 +15,6 @@ class Image < ActiveRecord::Base
   belongs_to :post
   belongs_to :page
   belongs_to :user
-  belongs_to :topic
+  belongs_to :community
   belongs_to :neighborhood
 end

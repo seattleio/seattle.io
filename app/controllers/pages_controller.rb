@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     @pages = Page.all
     @posts = Post.recent.published.limit(5)
     @neighborhoods = Neighborhood.all
-    @topics = Topic.all
+    @communities = Community.all
   end
 
   # GET /pages

@@ -1,0 +1,10 @@
+<% if @communities.size > 0 %>
+<section id="topics" class="group small">
+  <h1 class="group-title">Communities:</h1>
+  <% @communities.each do |c| %>
+    <div class="topic group-item">
+      <h2><%= link_to c.name, c %></h2>
+    </div>
+  <% end %>
+</section>
+<% end %>

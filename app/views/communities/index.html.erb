@@ -1,0 +1,22 @@
+<div class="topic-header row">
+  <h1 class="topic-title">Communities</h1>
+
+  <ul class="topic-toolbar">
+    <!--<li class="active"><a href="#">List</a></li>-->
+    <!--<li><a href="#">Map</a></li>-->
+    <!--<li><a href="#">Discuss</a></li>-->
+  </ul>
+</div>
+
+<div class="group">
+  <% @communities.each do |community| %>
+    <div class="group-item">
+      <h2><%= link_to community.name, community %></h2>
+      <div><p><%= teaser(community.description) %></p></div>
+    </div>
+  <% end %>
+</div>
+
+<% if can? :manage, @communities %>
+  <%= link_to 'New Community', new_community_path %>
+<% end %>

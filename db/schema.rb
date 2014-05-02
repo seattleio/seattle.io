@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140405010558) do
+ActiveRecord::Schema.define(version: 20140502010527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "communities", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "geometry"
+    t.boolean  "published"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "communities", ["slug"], name: "index_communities_on_slug", unique: true, using: :btree
 
   create_table "images", force: true do |t|
     t.text     "caption"
@@ -30,8 +42,10 @@ ActiveRecord::Schema.define(version: 20140405010558) do
     t.integer  "neighborhood_id"
     t.integer  "user_id"
     t.integer  "page_id"
+    t.integer  "community_id"
   end
 
+  add_index "images", ["community_id"], name: "index_images_on_community_id", using: :btree
   add_index "images", ["neighborhood_id"], name: "index_images_on_neighborhood_id", using: :btree
   add_index "images", ["page_id"], name: "index_images_on_page_id", using: :btree
   add_index "images", ["post_id"], name: "index_images_on_post_id", using: :btree
@@ -72,8 +86,10 @@ ActiveRecord::Schema.define(version: 20140405010558) do
     t.integer  "neighborhood_id"
     t.integer  "topic_id"
     t.string   "slug"
+    t.integer  "community_id"
   end
 
+  add_index "posts", ["community_id"], name: "index_posts_on_community_id", using: :btree
   add_index "posts", ["neighborhood_id"], name: "index_posts_on_neighborhood_id", using: :btree
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id", using: :btree

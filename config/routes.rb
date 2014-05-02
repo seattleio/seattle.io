@@ -1,4 +1,6 @@
 SeattleIo::Application.routes.draw do
+  resources :communities
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   
   devise_for :users, :path => '', :path_names => { 

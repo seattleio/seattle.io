@@ -1,6 +1,6 @@
-<%= form_for(@topic) do |f| %>
+<%= form_for(@community) do |f| %>
   <div class="admin-toolbar">
-    <h1 class="admin-title">Editing topic</h1>
+    <h1 class="admin-title">Editing community</h1>
 
     <ul class="admin-toolbar-buttons">
       <li class="edit-button map"><a href="#">Hide map</a></li>
@@ -13,12 +13,12 @@
     <div id="map" style="width:100%; height:300px;"></div>
   </div>
 
-  <% if @topic.errors.any? %>
+  <% if @community.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+      <h2><%= pluralize(@community.errors.count, "error") %> prohibited this community from being saved:</h2>
 
       <ul>
-      <% @topic.errors.full_messages.each do |msg| %>
+      <% @community.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -26,10 +26,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_field :name, class: 'title-input', placeholder: 'Topic name' %>
+    <%= f.text_field :name, class: 'title-input', placeholder: 'community name' %>
   </div>
 
   <div class="field">
-    <%= f.text_area :description, class: "content-input", placeholder: 'Describe the topic (using markdown)' %>
+    <%= f.text_area :description, class: "content-input", placeholder: 'Describe the community (using markdown)' %>
   </div>
 <% end %>

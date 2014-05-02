@@ -1,0 +1,35 @@
+<div class="topic-header row">
+  <h1 class="topic-title"><%= @community.name %></h1>
+
+  <ul class="topic-toolbar">
+    <!--<li class="active"><a href="#info">Info</a></li>-->
+    <li><a href="#recent-posts">Posts</a></li>
+    <!--<li><a href="#">Discuss</a></li>-->
+    <% if can? :manage, @community %>
+    <li><%= link_to 'Settings', edit_topic_path(@community) %></li>
+    <% end %>
+  </ul>
+  <%= link_to 'topics', topics_path, class: 'parent-page' %>
+</div>
+
+<section id="topic-description">  
+  <% if @community.images.first %>
+    <%= image_tag @community.images.first.file.url(:medium_topic), class: 'topic-image' %>
+  <% end %>
+
+  <p><%= markdown(@community.description) %></p>
+</section>
+<hr>
+
+<% if @community.posts.size > 0 %>
+<section id="recent-posts" class="group">
+  <h1>Recent posts about <%= @community.name %>:</h1>
+  <% @community.posts.each do |post| %>
+    <div class="post group-item">
+      <h2><%= link_to post.title, post %></h2>
+      <p><%= teaser(post.content) %></p>
+    </div>
+  <% end %>
+  </div>
+</section>
+<% end %>
