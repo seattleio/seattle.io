@@ -13,4 +13,8 @@ module ApplicationHelper
     t = markdown(text)
     sanitize(truncate(t, length: 300, escape: false), :tags=>[])
   end
+
+  def title(page_title)
+    content_for :title, page_title.to_s
+  end
 end
