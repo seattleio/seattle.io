@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @neighborhoods = Neighborhood.all
-    @communities = Topic.all
+    @communities = Community.all
   end
 
   # GET /posts/new
